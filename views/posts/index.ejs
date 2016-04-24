@@ -5,16 +5,23 @@
 
   <ul class="list-group">
     <% posts.forEach(function(post){ %>
-      <h3><%= post.title %></h3>
-      <p>By: <%= post.author %></p>
+      <li style="list-style: none;">
+        <h3><%= post.title %></h3>
+        <p>By: <%= post.author %></p>
+        <a class="btn btn-default" href="/posts/<%= post.id %>">Check it out</a>
+        <a class="delete-link btn btn-danger" href="/posts/<%= post.id %>">Delete</a>
+        <a class="btn btn-info" href="/posts/<%= post.id %>/edit">Edit</a>
+      </li>
     <% }) %>
   </ul>
 
+  <br><br>
+
   <h2>New Post</h2>
   <form method="post" action="/posts">
-    <label for="male">Author</label>
+    <label for="author">Author</label>
     <input type="text" name="author">
-    <label for="male">Title</label>
+    <label for="title">Title</label>
     <input type="text" name="title">
     <input type="submit">
   </form>

@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+
+  <h1>Edit Post</h1>
+
+  <h3><%= title %></h3>
+  <p>A post by: <%= author %></p>
+
+  <br><br>
+
+  <form class="put-form" action="/posts/<%= id %>">
+    <label for="author">Author</label>
+    <input type="text" name="author" value="<%= author %>">
+    <label for="title">Title</label>
+    <input type="text" name="title" value="<%= title %>">
+    <input type="submit">
+  </form>
+
+<% include ../partials/footer %>
